@@ -1,3 +1,17 @@
-@import "compass";
-@include global-reset;
+@import "base";
 
+#hd,
+#bd,
+#ft,
+.wrapper {
+	@include sp-wrapper;
+	@include pie-clearfix;
+}
+
+#main {
+	@include sp-main;
+}
+
+#nav {
+	@include sp-sidebar;
+}
