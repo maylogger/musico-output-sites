@@ -3,10 +3,12 @@
 
 $all-width: 1000px;
 $sidebar-width: 250px;
-$sidebar-location: left;
+$sidebar-location: right;
 $padding: 10px;
 @import "simple";
 
 .hide {
   display: none;
 }
+
+@import "mixin";
