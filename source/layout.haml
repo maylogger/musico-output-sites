@@ -1,0 +1,13 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    = partial "meta"
+    -# Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    = stylesheet_link_tag 'main'
+    /[if IE]
+      = stylesheet_link_tag 'ie'
+    = yield_content :head
+  %body{:class => page_classes}
+    .wrapper= yield
