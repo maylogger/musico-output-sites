@@ -8,6 +8,9 @@ body.artist {
       @extend .font-m;
       margin-top: 1em;
     }
+    .country {
+      text-align: right;
+    }
     div,ul {
       @extend .font-s;
     }
