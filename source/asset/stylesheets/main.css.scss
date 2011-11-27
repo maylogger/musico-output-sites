@@ -1,7 +1,5 @@
 @import "base";
 
-$hover-color: #369;
-
 a {
   @include link-colors(#369);
   @include hover-link;
@@ -10,18 +8,17 @@ a {
 body {
   background: image-url("candyhole.png");
   padding: $padding 0;
-  font-family: "helvetica neue", sans-serif;
 }
 
 #hd, #bd, #ft {
-	@include sp-wrapper;
-	margin-bottom: 10px;
+  @include sp-wrapper;
+  margin-bottom: 10px;
 }
 
 #hd, #ft {
   background: white;
-	@include border-radius(3px);
-	@include box-shadow(0 1px 2px rgba(#000,.15));
+  @include border-radius(3px);
+  @include box-shadow(0 1px 2px rgba(#000,.15));
   .inner {
     padding: $padding;
   }
@@ -31,7 +28,7 @@ body {
   @extend .clearfix;
   #main {
     background: white;
-  	@include border-radius(3px);
+    @include border-radius(3px);
     @include box-shadow(0 0 3px rgba(#000,.2));
     z-index: 2;
     position: relative;
@@ -45,50 +42,16 @@ body {
 #main {
   @include sp-main;
 }
-
-#sidebar {
-	@include sp-sidebar;
+body.no-sidebar #main {
+  @include sp-un-main;
 }
 
-#nav {
-  position: absolute;
-  top: -41px;
-  left: 10px;
-  width: 100%;
+#sidebar {
+  @include sp-sidebar;
+  position: relative;
+  z-index: 3;
+  @extend .font-s;
   li {
-    float: left;
-    margin: 0 5px 0 0;
-    a {
-      z-index: 1;
-      border: {
-        width: 1px 1px 0 1px;
-        color: white;
-        style: solid;
-      }
-      width: 80px;
-      font-size: 12px;
-      font-weight: normal;
-      text-transform: uppercase;
-      text-align: center;
-      display: block;
-      padding: 15px 0 13px;
-      background: white;
-      @include border-radius(3px 3px 0 0);
-      @include box-shadow(0 -1px 1px rgba(#000,.2));
-      .en {
-        display: none;
-      }
-      &:hover {
-        .en { display: inline; }
-        .tw { display: none; }
-        background: $hover-color;
-        color: white;
-        text-decoration: none;
-      }
-    }
-    &.current a {
-      position: relative;
-      z-index: 4;
-    }
+    @include margin-trailer(.5,$font-s);
   }
 }
