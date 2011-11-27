@@ -1,14 +1,22 @@
 @import "compass";
 @include global-reset;
 
-$all-width: 1000px;
-$sidebar-width: 250px;
+$all-width: 900px;
+$sidebar-width: 300px;
 $sidebar-location: right;
-$padding: 10px;
-@import "simple";
+$padding: 20px;
+@import "partials/simple";
 
 .hide {
   display: none;
 }
 
-@import "mixin";
+@import "partials/mixin";
+
+$hover-color: #369;
+$p-color: #444;
+$head-color: #444;
+@import "partials/nav";
+@import "partials/typo";
+@import "partials/pagination";
+@import "partials/article";
