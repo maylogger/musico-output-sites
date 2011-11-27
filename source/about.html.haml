@@ -1,0 +1,15 @@
+---
+layout: layout-no-sidebar
+---
+
+- content_for :head do
+  %title 關於活動
+
+%section.about
+  %h2.hide 關於活動
+  - 2.times do
+    %article
+      %header
+        %h3= link_to( lorem.sentence, "#about" )
+        %small= lorem.sentence
+      %p= lorem.sentences 20

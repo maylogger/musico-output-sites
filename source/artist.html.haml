@@ -1,0 +1,25 @@
+---
+layout: layout-artist
+---
+
+- content_for :head do
+  %title 關於XXX
+
+%h1.fn= lorem.name
+
+%figure
+  = image_tag( lorem.image('320x240'), :alt => "" )
+
+%section.member
+  %h2 Member
+  .content= lorem.sentence
+
+%section.profile
+  %h2 Profile
+  .content= lorem.sentence
+
+%section.links
+  %h2 Links
+  %ul
+    %li= link_to( "http://google.com", "#" )
+    %li= link_to( "http://apple.com", "#" )

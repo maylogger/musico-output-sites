@@ -1,0 +1,18 @@
+body.artist {
+  .wrapper {
+    width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    h2 {
+      @extend .font-m;
+      margin-top: 1em;
+    }
+    div,ul {
+      @extend .font-s;
+    }
+    ul {
+      @include no-bullet;
+    }
+  }
+}
