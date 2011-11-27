@@ -1,0 +1,5 @@
+article {
+  h3 {
+    @include adjust-font-size-to($font-l, 1);
+  }
+}

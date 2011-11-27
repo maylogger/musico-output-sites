@@ -1,0 +1,23 @@
+.pagination {
+  padding: 10px 0;
+  @extend .clearfix;
+  a,em,span {
+    display: block;
+    float: left;
+    padding: 0 7px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+  }
+  a:hover {
+    background: #ccc;
+  }
+  em {
+    border-color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+  span.disabled {
+    color: #ccc;
+    border-color: white;
+  }
+}

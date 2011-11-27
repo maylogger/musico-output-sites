@@ -1,0 +1,148 @@
+//
+// Zoomable baseline grid
+// type size presets
+//
+
+$font-s: 13px;
+$font-m: 15px;
+$font-l: 18px;
+$font-xl: 22px;
+$font-xxl: 27px;
+$font-xxxl: 40px;
+
+body {
+  font-family: "helvetica neue", sans-serif;
+  font-size: 100%;
+  line-height: 1.5em;
+  color: $p-color;
+}
+
+.font-s {
+  @include adjust-font-size-to($font-s,3/4);
+}
+
+.font-m {
+  @include adjust-font-size-to($font-m);
+}
+
+.font-l {
+  @include adjust-font-size-to($font-l);
+}
+
+.font-xl {
+  @include adjust-font-size-to($font-xl);
+}
+
+.font-xxl {
+  @include adjust-font-size-to($font-xxl);
+}
+
+.font-xxxl {
+  @include adjust-font-size-to($font-xxxl);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $head-color;
+  font-weight: bold;
+}
+
+h1 {
+  @extend .font-xxl;
+}
+
+h2 {
+  @extend .font-xl;
+}
+
+h3 {
+  @extend .font-l;
+  @include adjust-leading-to(2,$font-l);
+}
+
+h4 {
+  @extend .font-m;
+}
+
+h5 {
+  @extend .font-s;
+  @include adjust-leading-to(1,$font-s);
+}
+
+h6 {
+  @extend .font-s;
+  color: lighten($head-color ,26.5%);
+  @include adjust-leading-to(1,$font-s);
+}
+
+small {
+  @extend .font-s;
+}
+
+p {
+  @extend .font-m;
+  @include margin-trailer(1,$font-m);
+}
+
+ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+ul.unstyled {
+  list-style: none;
+  margin-left: 0;
+  ul {
+    list-style: disc;
+  }
+}
+ol {
+  margin-left: 28px;
+  list-style: decimal;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  padding-left: 1em;
+}
+
+
+blockquote {
+  border-left: 5px solid #999;
+  padding-left: 20px;
+  margin-left: 20px;
+  @include margin-trailer(1,$font-m);
+  p {
+    @extend .font-l;
+    margin: 0;
+  }
+  cite {
+    @extend .font-s;
+    color: fade-out($head-color ,.5);
+    &:before {
+      content: "— ";
+    }
+  }
+}
+
+code {
+  font-family: Monaco, Andale Mono, Courier New, monospace;
+  font-weight: normal;
+  color: #657B83;
+  background: white;
+  padding: 1px 3px;
+  @include border-radius(3px);
+  font-size: 12px;
+  line-height: 1;
+}
+
+pre {
+  background: white;
+  color: #657B83;
+  padding: 5px 9px;
+  border: 1px solid rgba(0,0,0,.2);
+  @include box-shadow(0 1px 2px rgba(0,0,0,.1));
+  @include border-radius(3px);
+  @include margin-trailer(1,$font-s);
+  overflow: auto;
+  @extend .font-s;
+}

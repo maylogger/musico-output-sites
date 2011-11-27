@@ -1,0 +1,45 @@
+#nav {
+  position: absolute;
+  top: -41px;
+  left: 15px;
+  width: 100%;
+  ul {
+    @include no-bullet;
+  }
+  li {
+    float: left;
+    margin: 0 5px 0 0;
+    a {
+      z-index: 1;
+      border: {
+        width: 1px 1px 0 1px;
+        color: white;
+        style: solid;
+      }
+      width: 80px;
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      padding: 10px 0 6px;
+      background: white;
+      @include border-radius(3px 3px 0 0);
+      @include box-shadow(0 -1px 1px rgba(#000,.2));
+      .en {
+        display: none;
+      }
+      &:hover {
+        .en { display: inline; }
+        .tw { display: none; }
+        background: $hover-color;
+        color: white;
+        text-decoration: none;
+      }
+    }
+    &.current a {
+      position: relative;
+      z-index: 4;
+    }
+  }
+}
