@@ -1,10 +1,30 @@
 - content_for :head do
   %title 標題
 
-%h1 本頁標題
-%p
-  文章
-  = lorem.sentences 5
+- content_for :sidebar do
+  %section.widget
+    %h2 最新消息
+    %ul
+      -5.times do
+        %li= link_to( lorem.sentence, "#" )
+  %section.widget
+    %h2 最新留言
+    %ul
+      -5.times do
+        %li= link_to( lorem.sentence, "#" )
 
--# - content_for :sidebar do
--#   %h2 側欄
+%section.news
+  %h2.hide 最新消息
+  - 5.times do
+    %article
+      %header
+        %h3= link_to( lorem.sentence, "#" )
+        %small= lorem.name + " — " + lorem.date
+      %p= lorem.sentences 5
+
+.pagination
+  %span.previous_page.disabled 上一頁
+  %em.current 1
+  %a{:href => "#", :rel => "next"} 2
+  %a{:href => "#"} 3
+  %a.next_page{:href => "#", :rel => "next"} 下一頁
